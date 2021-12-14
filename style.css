@@ -27,25 +27,28 @@ body {
   display: flex;
 }
 
-.logosTec{
+.logosTec {
   padding: 10% 0;
 }
 
-.logosTec img{
+.logosTec img {
   width: 100%;
 }
 
-#javascript{
-  width: 50px;
+#javascript {
+  max-width: 50px;
 }
-#html{
-  width: 50px;
+
+#html {
+  max-width: 50px;
 }
-#react{
-  width: 50px;
+
+#react {
+  max-width: 50px;
 }
-#css{
-  width: 50px;
+
+#css {
+  max-width: 50px;
 }
 
 .contacts {
@@ -104,6 +107,7 @@ body {
   margin-left: 80px;
   max-width: 300px;
   border-radius: 150px;
+  width: 100%;
 }
 
 #projects {
