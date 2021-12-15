@@ -22,8 +22,9 @@ body {
   margin-bottom: 20px;
 }
 
-#buttons {
-  display: flex;
+.button:hover {
+  position: relative;
+  top: -5px
 }
 
 .logosTec {
@@ -62,6 +63,11 @@ body {
 
 .contacts img {
   width: 50px;
+}
+
+.contacts img:hover {
+  border: solid 3px white;
+  border-radius: 40px;
 }
 
 #titleName {
@@ -153,4 +159,8 @@ footer {
 .card img {
   height: 200px;
   object-fit: cover;
+}
+
+#contact a{
+  text-decoration: none;
 }
