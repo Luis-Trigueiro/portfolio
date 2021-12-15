@@ -8,8 +8,15 @@ const go = (elem) => {
     });
 }
 
-var mail = document.getElementById("mail").innerHTML = "\u{1F4E7} marquestrigueiro@gmail.com"
-var phone = document.getElementById("phone").innerHTML = "\u{1F4F1} 920332386"
-var linkedin = document.getElementById("linkedin").innerHTML += " Linkedin"
-var git = document.getElementById("git").innerHTML += " GitHub"
 
+
+function rotate() {
+    const increment = window.scrollY
+    document.getElementById("react").style.transform = `rotate(${increment}deg)`;
+    document.getElementById("javascript").style.transform = `rotate(${increment}deg)`;
+    document.getElementById("html").style.transform = `rotate(${increment}deg)`;
+    document.getElementById("css").style.transform = `rotate(${increment}deg)`;
+
+}
+
+window.addEventListener("scroll", rotate)
