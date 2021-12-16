@@ -122,8 +122,12 @@ body {
 #projects {
   background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 50%, rgba(0, 212, 255, 1) 100%);
   text-align: center;
-  display: flex;
   justify-content: center;
+}
+
+#projects h2 {
+  color: white;
+  font-size: 50px;
 }
 
 .portifolio {
@@ -162,6 +166,6 @@ footer {
   object-fit: cover;
 }
 
-#contact a{
+#contact a {
   text-decoration: none;
 }
