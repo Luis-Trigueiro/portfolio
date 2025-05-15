@@ -1,4 +1,3 @@
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![GitHub Pages](https://img.shields.io/badge/Deployed-GitHub_Pages-blue?style=for-the-badge)
 
 # Personal Portfolio
