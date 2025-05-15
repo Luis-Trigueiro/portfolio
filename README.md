@@ -1,3 +1,7 @@
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![GitHub Pages](https://img.shields.io/badge/Deployed-GitHub_Pages-blue?style=for-the-badge)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
+
 # Personal Portfolio
 
 This is the source code for my personal portfolio website, built with React. It showcases my projects, skills, and contact information in a clean and responsive layout.
