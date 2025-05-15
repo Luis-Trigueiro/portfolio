@@ -18,6 +18,7 @@ This is the source code for my personal portfolio website, built with React. It 
 - Mobile-first layout
 
 ## 📂 Project Structure
+```bash
 ├── public/
 ├── src/
 │   ├── assets/          # Images and icons
