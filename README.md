@@ -27,7 +27,7 @@ This is the source code for my personal portfolio website, built with React. It 
 │   ├── App.js
 │   └── index.js
 └── README.md
-```bash
+````
 
 ## 📞 Contact
 - [LinkedIn](https://www.linkedin.com/in/luis-eduardo-trigueiro)
