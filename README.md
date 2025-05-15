@@ -5,6 +5,9 @@ This is the source code for my personal portfolio website, built with React. It 
 ## 🔗 Live Demo
 [Visit the website](https://luis-trigueiro.github.io/portifolio/)
 
+## 🖼️ Preview
+![Portfolio Preview](./src/assets/screenshot-home.png)
+
 ## 🚀 Tech Stack
 - React
 - Styled-components / CSS
