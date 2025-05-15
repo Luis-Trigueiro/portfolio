@@ -3,7 +3,7 @@
 This is the source code for my personal portfolio website, built with React. It showcases my projects, skills, and contact information in a clean and responsive layout.
 
 ## 🔗 Live Demo
-[Visit the website](https://luis-trigueiro.github.io/portifolio/)
+[Visit the website](https://luis-trigueiro.github.io/portfolio/)
 
 ## 🖼️ Preview
 ![Portfolio Preview](./img/website.png)
