@@ -1,25 +1,33 @@
-# Portfólio Pessoal
+# Personal Portfolio
 
-Este é o repositório do meu site de portfólio, desenvolvido em React.
+This is the source code for my personal portfolio website, built with React. It showcases my projects, skills, and contact information in a clean and responsive layout.
 
-## 🔗 Link ao vivo
-[Acesse meu portfólio](https://luis-trigueiro.github.io/portifolio/)
+## 🔗 Live Demo
+[Visit the website](https://luis-trigueiro.github.io/portifolio/)
 
-## 🚀 Tecnologias
+## 🚀 Tech Stack
 - React
 - Styled-components / CSS
 - React Router
 
-## ✨ Funcionalidades
-- Apresentação de projetos
-- Contato via formulário
-- Responsividade
+## ✨ Features
+- Modern, responsive design
+- Project showcase with details and links
+- About me and contact section
+- Smooth navigation with React Router
+- Mobile-first layout
 
-## 📂 Estrutura
-- `src/components`: Componentes reutilizáveis
-- `src/pages`: Páginas do site
-- etc.
+## 📂 Project Structure
+├── public/
+├── src/
+│   ├── assets/          # Images and icons
+│   ├── components/      # Reusable UI components
+│   ├── pages/           # Website pages (Home, Projects, Contact)
+│   ├── App.js
+│   └── index.js
+└── README.md
 
-## 📞 Contato
+## 📞 Contact
 - [LinkedIn](https://www.linkedin.com/in/luis-eduardo-trigueiro)
 - Email: marquestrigueiro@gmail.com
+
