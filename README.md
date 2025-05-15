@@ -21,5 +21,5 @@ Este é o repositório do meu site de portfólio, desenvolvido em React.
 - etc.
 
 ## 📞 Contato
-- [LinkedIn](www.linkedin.com/in/luis-eduardo-trigueiro)
+- [LinkedIn](https://www.linkedin.com/in/luis-eduardo-trigueiro)
 - Email: marquestrigueiro@gmail.com
