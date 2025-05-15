@@ -6,7 +6,7 @@ This is the source code for my personal portfolio website, built with React. It 
 [Visit the website](https://luis-trigueiro.github.io/portifolio/)
 
 ## 🖼️ Preview
-![Portfolio Preview](./src/assets/screenshot-home.png)
+![Portfolio Preview](./src/assets/website.png)
 
 ## 🚀 Tech Stack
 - React
