@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 2rem;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        input,
+        button {
+            display: block;
+            margin: 1rem 0;
+            width: 100%;
+            padding: 0.5rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Admin Login</h1>
+    <div id="login-section">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+
+    <div id="admin-panel" class="hidden">
+        <h2>Update Home Section</h2>
+
+        <label for="htitle">Main Title</label>
+        <input type="text" id="title" placeholder="e.g. Luis Trigueiro">
+
+        <label for="subtitle">Subtitle</label>
+        <input type="text" id="subtitle" placeholder="e.g. Full Stack Developer">
+
+        <label for="aboutMe">About Me Text</label>
+        <textarea id="aboutMe" placeholder="Write your about me section..." rows="6" style="width:100%;"></textarea>
+
+        <button onclick="updateHome()">Save</button>
+
+        <hr>
+        <h2>Projects</h2>
+    
+        <input type="text" id="project-title" placeholder="Project Title">
+        <input type="text" id="project-description" placeholder="Description">
+        <input type="text" id="project-image" placeholder="Image URL">
+        <input type="text" id="project-url" placeholder="Live URL">
+        <button onclick="addProject()">Add Project</button>
+        <hr>
+        <button onclick="logout()">Logout</button>
+
+      
+    
+        <div id="project-list"></div>
+    </div>
+
+   
+
+
+    <script>
+        function login() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            auth.signInWithEmailAndPassword(email, password)
+                .then(() => {
+                    document.getElementById("login-section").classList.add("hidden");
+                    document.getElementById("admin-panel").classList.remove("hidden");
+                    loadProjects();
+                })
+                .catch(err => alert("Login failed: " + err.message));
+        }
+
+        function updateHome() {
+            const title = document.getElementById("title").value;
+            const subtitle = document.getElementById("subtitle").value;
+            const about = document.getElementById("aboutMe").value;
+
+            db.collection("conteudo").doc("home").set({
+                title: title,
+                subtitle: subtitle,
+                about: about
+            }).then(() => {
+                alert("Home section updated!");
+            });
+        }
+
+        function logout() {
+            auth.signOut().then(() => location.reload());
+        }
+
+        function addProject() {
+            const title = document.getElementById("project-title").value;
+            const description = document.getElementById("project-description").value;
+            const image = document.getElementById("project-image").value;
+            const url = document.getElementById("project-url").value;
+
+            db.collection("projects").add({
+                title,
+                description,
+                image,
+                url
+            }).then(() => {
+                alert("Project added!");
+                loadProjects();
+            });
+        }
+
+        function deleteProject(id) {
+            db.collection("projects").doc(id).delete().then(() => {
+                alert("Project deleted!");
+                loadProjects();
+            });
+        }
+
+        function loadProjects() {
+            const container = document.getElementById("project-list");
+            container.innerHTML = "";
+
+            db.collection("projects").get().then(snapshot => {
+                snapshot.forEach(doc => {
+                    const data = doc.data();
+                    const div = document.createElement("div");
+                    div.style.border = "1px solid #ccc";
+                    div.style.padding = "10px";
+                    div.style.marginBottom = "10px";
+                    div.innerHTML = `
+                <strong>${data.title}</strong><br>
+                <em>${data.description}</em><br>
+                <img src="${data.image}" style="max-width: 100px;"><br>
+                <a href="${data.url}" target="_blank">Visit</a><br>
+                <button onclick="deleteProject('${doc.id}')">Delete</button>
+            `;
+                    container.appendChild(div);
+                });
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -11,13 +11,14 @@ const go = (elem) => {
 
 
 function rotate() {
-    const increment = window.scrollY
-    document.getElementById("react").style.transform = `rotate(${increment}deg)`;
-    document.getElementById("javascript").style.transform = `rotate(${increment}deg)`;
-    document.getElementById("html").style.transform = `rotate(${increment}deg)`;
-    document.getElementById("css").style.transform = `rotate(${increment}deg)`;
-    document.getElementById("java").style.transform = `rotate(${increment}deg)`;
-
+    const increment = window.scrollY;
+    const elements = ["react", "javascript", "html", "css", "java"];
+    elements.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.style.transform = `rotate(${increment}deg)`;
+        }
+    });
 }
 
 window.addEventListener("scroll", rotate);
@@ -48,7 +49,7 @@ var question = () => {
         $("#bot").html('<p class="robotAnswer"><audio autoplay> <source src="sound/robot.mp3"type="audio/mpeg"></audio><span style="font-size: 14px;">🤖</span></br>Contact email is marquestrigueiro@gmail.com</p>');
     } else if (questionUser.match(/(language|stack)/)) {
         $("#bot").html('<p class="robotAnswer"><audio autoplay> <source src="sound/robot.mp3"type="audio/mpeg"></audio><span style="font-size: 14px;">🤖</span></br>Do you want to dowload my CV to have this information? <a target="_blank" href="doc/Luis Eduardo Trigueiro CV PT_F.pdf">click</a></p>');
-    }else{
+    } else {
         $("#bot").html('<p class="robotAnswer"><audio autoplay> <source src="sound/robot.mp3"type="audio/mpeg"></audio><span style="font-size: 14px;">🤖</span></br>I do not know this information. Maybe here. <a target="_blank" href="doc/Luis Eduardo Trigueiro CV PT_F.pdf">click</a></p>');
 
     }

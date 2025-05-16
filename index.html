@@ -7,6 +7,10 @@
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="50">
     <meta property="og:image:height" content="50">
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
     <link rel="shortcut icon" type="imagex/png" href="img/folder.png">
     <title>Portfólio-Luis-Trigueiro</title>
     <link rel="stylesheet" href="style.css">
@@ -17,36 +21,14 @@
 
 <body>
 
-    <!--<header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#welcome-section">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#projects">Work</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>-->
+    <header>
+    </header>
 
     <main>
         <section id="welcome-section">
             <div id="titleName">
-                <h1>Luis Trigueiro</h1>
-                <h5>Full Stack Developer</h5>
+                <h1 id="title">Luis Trigueiro</h1>
+                <h5 id="subtitle">Full Stack Developer</h5>
                 <a class="button" href="#about">About Me</a>
                 <a class="button" href="#projects">Projects</a>
                 <div class="logosTec">
@@ -72,7 +54,7 @@
         <section id="about">
             <div id="text">
                 <h2>About Me</h2>
-                <p>
+                <p id="aboutMe">
                     Dedicated and efficient Professional developer with great logical reasoning and experience in React,
                     JavaScript, Node, C#, .Net, JavaScript, CSS, HTML, PHP, Front end and others, as well as CRMs.
                     Experienced, prepared and qualified for new challenges. Besides that, I can hightlight project
@@ -89,78 +71,8 @@
 
         <section id="projects">
             <h2>Projects</h2>
-            <div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-4">
-                            <div class="card" style="max-width: 18rem;">
-                                <img src="img/covid.png" class="card-img-top" alt="covid live website image">
-                                <div class="card-body">
-                                    <h5 class="card-title">Covid Live</h5>
-                                    <p class="card-text">Created using: Routes; Aixo; React Bootstrap; Components;
-                                        Props;</p>
-                                    <a target="blank" href="https://luis-trigueiro.github.io/Covid/"
-                                        class="btn btn-primary">See more</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4">
-                            <div class="card" style="max-width: 18rem;">
-                                <img src="img/rick.png" class="card-img-top" alt="Rick and Morty website image">
-                                <div class="card-body">
-                                    <h5 class="card-title">Rick And Morty Profiles</h5>
-                                    <p class="card-text">Created using: Routes; Aixo; React Bootstrap; Components;
-                                        Props;</p>
-                                    <a target="blank" href="https://luis-trigueiro.github.io/react-rick-morty-/"
-                                        class="btn btn-primary">See more</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4">
-                            <div class="card" style="max-width: 18rem;">
-                                <img src="img/bellajoux.png" class="card-img-top" alt="Bellajoux store image">
-                                <div class="card-body">
-                                    <h5 class="card-title">Bellajoux Store</h5>
-                                    <p class="card-text">Created using: Prestashop; JavaScript;</p>
-                                    <a target="blank" href="https://bellajoux.pt/" class="btn btn-primary">See more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-4">
-                            <div class="card" style="max-width: 18rem;">
-                                <img src="img/game.jpeg" class="card-img-top" alt="Sapace hungry game image">
-                                <div class="card-body">
-                                    <h5 class="card-title">Mobile Game Space Hungry</h5>
-                                    <p class="card-text">Created using: Unity Development Platform; C#;</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4">
-                            <div class="card" style="max-width: 18rem;">
-                                <img src="img/website.png" class="card-img-top" alt="this website image">
-                                <div class="card-body">
-                                    <h5 class="card-title">This Website</h5>
-                                    <p class="card-text">Created using: JavaScript; Bootstrap; HTML; CSS;</p>
-                                    <a target="blank" href="/" class="btn btn-primary">See more</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4">
-                            <div class="card" style="max-width: 18rem;">
-                                <img src="img/drantonio.webp" class="card-img-top" alt="this website image">
-                                <div class="card-body">
-                                    <h5 class="card-title">Mobile app</h5>
-                                    <p class="card-text">Created using: Flutter</p>
-                                    <a target="blank"
-                                        href="https://play.google.com/store/apps/details?id=com.outsystemscloud.luistrigueiro.Dr.AntonioRibeiro"
-                                        class="btn btn-primary">See more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="container">
+                <div class="row" id="projects-container"></div>
             </div>
         </section>
     </main>
@@ -173,7 +85,8 @@
     <div class="panel">
         <div class="exit">x</div>
         <div>
-            <p class="robotWelcome" style="margin-bottom: 0rem;"><span style="font-size: 14px;">🤖</span></br><b>Hello I'm DuduBot</b></p>
+            <p class="robotWelcome" style="margin-bottom: 0rem;"><span style="font-size: 14px;">🤖</span></br><b>Hello
+                    I'm DuduBot</b></p>
             <p class="robotWelcome" style="animation-delay: 2.4s;"><b>How can I help you?</b></p>
         </div>
         <p id="questionUser"></p>
@@ -185,9 +98,48 @@
 
     <img class="flip" src="img/chat.png" alt="chat">
 
-   
+
 
     <script src="script.js"></script>
+
+    <script>
+        db.collection("conteudo").doc("home").get().then((doc) => {
+            if (doc.exists) {
+                const data = doc.data();
+                document.getElementById("title").innerText = data.title || "Luis Trigueiro";
+                document.getElementById("subtitle").innerText = data.subtitle || "Full Stack Developer";
+                document.getElementById("aboutMe").innerText = data.about || "About me not available.";
+            } else {
+                console.log("Documento 'home' não encontrado.");
+            }
+        }).catch((error) => {
+            console.error("Erro ao carregar conteúdo:", error);
+        });
+
+        db.collection("projects").get().then(snapshot => {
+            console.log(snapshot);
+            const container = document.getElementById("projects-container");
+
+            snapshot.forEach(doc => {
+                const project = doc.data();
+
+                const div = document.createElement("div");
+                div.className = "col-sm-12 col-md-4";
+                div.innerHTML = `
+        <div class="card" style="max-width: 18rem;">
+          <img src="${project.image}" class="card-img-top" alt="${project.title}">
+          <div class="card-body">
+            <h5 class="card-title">${project.title}</h5>
+            <p class="card-text">${project.description}</p>
+            <a target="_blank" href="${project.url}" class="btn btn-primary">See more</a>
+          </div>
+        </div>
+      `;
+                container.appendChild(div);
+            });
+        });
+    </script>
+
 
 </body>
 
